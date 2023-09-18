@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript test</title>
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <section class="wrapper">
+      <!-- Header -->
+      <header class="header">
+        <p class="name__quiz">JavaScript</p>
+        <!-- Progress bar -->
+        <div id="progress-tracker" class="inactive">
+          <p>Total test: <span id="tracker">0%</span> completed</p>
+          <progress id="progressBar" value="0" max="100"></progress>
+        </div>
+      </header>
+
+      <hr class="solid" />
+
+      <!-- Quiz screen -->
+      <section class="quiz-weclome-screen">
+        <!-- Number of questions and timer -->
+        <div id="info" class="info-wrapper">
+          <p id="questions_counter"></p>
+          <div class="timer">
+            <p>TIME REMAINING</p>
+            <div id="timerContainer">
+              <span id="timer_counter">500</span>
+            </div>
+          </div>
+        </div>
+        <!-- Quiz info -->
+        <section id="welcome" class="quiz_info">
+          <h1 class="quiz_info__header">Start JavaScript Quiz</h1>
+          <p class="quiz_info__description">
+            There are a list of javascript qiuzzes that will clear your
+            javascript concepts. Our<br />
+            javascript quiz covers javascript fundamentals, advance concepts,
+            array, DOM, and <br />
+            other topics.
+          </p>
+        </section>
+        <!-- Quiz box -->
+        <section id="quiz" class="quiz_box inactive">
+          <p id="question" class="question_text quiz_info__description"></p>
+          <div id="options" class="answers">
+            <!-- Questions are loaded here -->
+          </div>
+        </section>
+        <!-- Results -->
+        <section id="results-page" style="display: none">
+          <div id="result-text" class="">
+            <p>Sorry, the quiz timed out, please try again!</p>
+          </div>
+          <div>
+            <!-- FIRST ROW -->
+            <div class="stats-row" id="first-row">
+              <div class="stats-cell" id="seconds-stat">
+                <p id="seconds"></p>
+                <p>SECONDS LEFT</p>
+              </div>
+              <div class="stats-cell" id="unanswered-stats">
+                <p id="unanswered"></p>
+                <p>UNANSWERED QUESTIONS</p>
+              </div>
+            </div>
+            <!-- SECOND ROW -->
+            <div class="stats-row" id="second-row">
+              <div class="stats-cell" id="correct-stats">
+                <p id="correct"></p>
+                <p>CORRECT QUESTIONS</p>
+              </div>
+              <div class="stats-cell" id="incorrect-stats">
+                <p id="incorrect"></p>
+                <p>INCORRECT QUESTIONS</p>
+              </div>
+            </div>
+          </div>
+          <div id="end-image-container" class="image-result">
+            <img id="end-img" src="" alt="" />
+          </div>
+        </section>
+        <!-- Quiz buttons -->
+        <div class="buttons">
+          <button id="btn__start" class="btn">Start quiz</button>
+          <button id="btn__next" class="btn inactive">Next question</button>
+          <button id="btn_restart" class="btn btn__restart">Retake quiz</button>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

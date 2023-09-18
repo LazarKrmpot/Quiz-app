@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Roboto&display=swap");
+:root {
+  background-color: rgb(23, 26, 49);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  /* Colors */
+  --font-color: rgb(251, 251, 251);
+  --font-color-description: rgb(131, 137, 166);
+  --font-color-darker: rgb(83, 89, 162);
+  --timer-color: rgb(8, 193, 203);
+  --bg-color: rgb(40, 45, 73);
+  --border-color: rgb(68, 72, 98);
+  --button-color: rgb(26, 57, 255);
+  --incorret-color: rgb(248, 83, 84);
+  --incorret-bg: rgba(248, 83, 83, 0.103);
+  --correct-color: var(--timer-color);
+  --proggress-bar-color: rgb(59, 63, 121);
+
+  /* Paddings */
+  --padding-left: 85px;
+  --padding-top: 30px;
+  --padding-right: 120px;
+  --padding-bottom: 70px;
+
+  /* Margins */
+  --margin-bottom: 85px;
+
+  /* Font sizes */
+  --header-font-size: 2.7rem;
+  --stats-font-size: 0.9rem;
+  --regular-font-size: 1.3rem;
+  --statistic-font-size: 3.7rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+.wrapper {
+  background-color: var(--bg-color);
+  padding-top: var(--padding-top);
+  width: 1090px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.inactive {
+  display: none;
+}
+
+/*********** Image  *******************/
+
+.image-result {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.confet-image {
+  right: 60px;
+  bottom: 40px;
+}
+
+.sad-image {
+  right: -130px;
+  bottom: -43px;
+}
+
+/*************** Header *******************/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: var(--padding-left);
+  padding-right: var(--padding-right);
+  padding-bottom: var(--padding-top);
+}
+
+.name__quiz {
+  font-weight: 800;
+  color: var(--font-color);
+  font-size: var(--regular-font-size);
+}
+
+/**************** PROGERS *****************/
+#progressBar {
+  width: 100%;
+  height: 7px;
+  background-color: var(--proggress-bar-color);
+  border: none;
+  border-radius: 4px;
+}
+
+#progressBar::-webkit-progress-bar {
+  background-color: rgb(
+    59,
+    63,
+    121
+  ); /* Background color for Webkit browsers (Safari, Chrome) */
+}
+
+#progressBar::-webkit-progress-value {
+  background-color: rgb(
+    87,
+    62,
+    215
+  ); /* Progress indicator for Webkit browsers (Safari, Chrome) */
+  border-radius: 4px;
+}
+
+#progressBar::-moz-progress-bar {
+  background-color: rgb(87, 62, 215); /* progress indicator for Firefox */
+  border-radius: 4px;
+}
+
+#progress-tracker p {
+  color: var(--font-color);
+}
+
+.solid {
+  border: 1px solid var(--border-color);
+}
+
+/*************** Quiz welcome screen ***************/
+
+.quiz-weclome-screen {
+  padding-top: var(--padding-top);
+  padding-left: var(--padding-left);
+  padding-bottom: var(--padding-bottom);
+  padding-right: var(--padding-right);
+}
+
+/* Number of questions and timer */
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  font-weight: 800;
+  color: var(--font-color-darker);
+}
+
+.info-wrapper p {
+  font-size: var(--stats-font-size);
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer_counter {
+  color: var(--timer-color);
+  font-size: var(--regular-font-size);
+  padding-left: 15px;
+}
+
+/* Quiz info  */
+
+.quiz_info {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-top);
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.quiz_info__header {
+  padding-bottom: 20px;
+  font-size: var(--header-font-size);
+  font-weight: 200;
+  color: var(--font-color);
+}
+
+.quiz_info__description {
+  color: var(--font-color-description);
+  line-height: 1.8rem;
+  font-size: 1.2rem;
+}
+
+/****************** Quiz BOX **********************/
+
+.quiz_box {
+  flex-direction: column;
+}
+
+.quiz_info__description {
+  padding-bottom: var(--padding-top);
+}
+
+/* Answers */
+.answers {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--padding-top);
+}
+
+.answers input {
+  margin-right: 20px;
+  display: none;
+}
+
+/************** RADIO BUTTONS *********************/
+
+.answers label {
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 15px;
+  padding: 20px;
+  border: 2px solid var(--border-color);
+  color: var(--font-color-description);
+  transition: 0.5s;
+}
+
+.answers label:before {
+  content: "";
+  background-color: transparent;
+  border: 1px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  margin-right: 10px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+/* Style for the fontAwsome icon */
+.answers_list[type="radio"]:checked + label:before {
+  content: "\f00c";
+  font-family: "FontAwesome";
+  background-color: var(--timer-color);
+  color: var(--font-color);
+}
+
+/* Style the icon when the radio button is checked */
+.answers_list[type="radio"]:checked + label {
+  border: 2px solid var(--timer-color);
+}
+
+/****************** Results **********************/
+
+#results-page {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--margin-bottom);
+  width: 460px;
+}
+
+#result-text {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 100;
+  padding: 20px;
+  background-color: var(--incorret-bg);
+  color: var(--incorret-color);
+}
+
+.sad-image + #result-text {
+  display: flex;
+}
+
+#first-row p:nth-child(1) {
+  color: var(--font-color);
+}
+
+#correct-stats p:nth-child(1) {
+  color: var(--correct-color);
+}
+
+#correct-stats {
+  margin-right: 60px;
+}
+
+#incorrect-stats {
+  margin-right: 0;
+}
+
+#incorrect-stats :nth-child(1) {
+  color: var(--incorret-color);
+}
+
+#unanswered-stats {
+  margin-right: 0;
+}
+
+.stats-row {
+  display: flex;
+  flex-direction: row;
+  margin-top: var(--padding-top);
+}
+
+.stats-row p:nth-child(1) {
+  font-size: var(--statistic-font-size);
+}
+
+.stats-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-right: 50px;
+}
+
+.stats-cell p:nth-child(2) {
+  color: var(--font-color-darker);
+}
+
+/****************** Quiz buttons **********************/
+
+.buttons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: end;
+}
+
+.btn {
+  background-color: var(--button-color);
+  border: none;
+  color: var(--font-color);
+  width: 225px;
+  height: 65px;
+  font-size: larger;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+}
